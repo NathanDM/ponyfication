@@ -1,0 +1,146 @@
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #fff;
+    position: fixed;
+    height: 3.5em;
+    width: 3.5em;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    padding-bottom: 1.5em;
+    padding-left: 0.8em;
+    font-size: 1.5em;
+    text-align: left;
+    background-color: #2980b9;
+    border-radius: 50%;
+    -webkit-transform: translate(50%, 50%);
+    outline: none;
+}
+
+button:hover, button:active, button:focus {
+    background-color: #20638f;
+}
+
+.menu-wrapper {
+    font-size: 1em;
+    position: fixed;
+    width: 13em;
+    height: 26em;
+    bottom: -13em;
+    right: 0;
+    z-index: 10;
+    overflow: hidden;
+    margin-left: -13em;
+    border-radius: 50% 0 0 0;
+    -webkit-transform: scale(0.1);
+    -webkit-transition: all 0.3s ease;
+    -webkit-transform-origin: 100% 50%;
+}
+
+.opened {
+    border-radius: 50% 0 0 0;
+    -webkit-transform: scale(1);
+}
+
+.menu-wrapper li {
+    font-size: 1.5em;
+    position: absolute;
+    overflow: hidden;
+    width: 10em;
+    height: 10em;
+    right: 0;
+    top: 50%;
+    margin-top: -1.3em;
+    margin-left: -10em;
+    -webkit-transform-origin: 100% 100%;
+    -webkit-transition: border 0.3s ease;
+}
+
+.menu-wrapper li a {
+    display: block;
+    font-size: 1em;
+    font-family: 'Open Sans';
+    position: absolute;
+    height: 6.5em;
+    width: 6.5em;
+    bottom: -3.25em;
+    right: -3.25em;
+    padding-top: 0.1em;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transform: skew(-60deg) rotate(-75deg) scale(1);
+    -webkit-transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-wrapper li a span {
+    position: relative;
+    display: block;
+    font-size: 0.35em;
+    opacity: 0.7;
+}
+.menu-wrapper li a span i {
+    display: block;
+    margin-top: 0.45em;
+    font-size: 1.7em;
+}
+
+.menu-wrapper li:first-child {
+    -webkit-transform: rotate(0deg) skew(60deg);
+}
+
+.menu-wrapper li:nth-child(2) {
+    -webkit-transform: rotate(30deg) skew(60deg);
+}
+
+.menu-wrapper li:nth-child(3) {
+    -webkit-transform: rotate(60deg) skew(60deg);
+}
+
+.menu-wrapper li:nth-child(4) {
+    -webkit-transform: rotate(90deg) skew(60deg);
+}
+
+.menu-wrapper li:nth-child(5) {
+    -webkit-transform: rotate(120deg) skew(60deg);
+}
+
+.menu-wrapper li:nth-child(6) {
+    -webkit-transform: rotate(150deg) skew(60deg);
+}
+
+.menu-wrapper li:nth-child(odd) a {
+    background-color: #2980b9;
+}
+
+.menu-wrapper li:nth-child(even) a {
+    background-color: #20638f;
+}
+
+.menu-wrapper li a:hover {
+    background-color: #2980a0
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #c0cdd1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.overlay.on-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}

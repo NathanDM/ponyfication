@@ -17,22 +17,26 @@ let appIcon;
 function createWindow() {
     let atomScreen = require('screen');
 
-    const notifWidth = 400;
-    const notifHeight = 100;
+    const notifWidth = 470;
+    const notifHeight = 285;
     const screenInfo = atomScreen.getAllDisplays();
     const workArea = screenInfo[0].workArea;
 
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        x: workArea.width - (notifWidth + 10),
-        y: workArea.height - (notifHeight + 40),
+        x: workArea.width - (notifWidth ),
+        y: workArea.height - (notifHeight),
+        //build
+        //width: notifWidth,
+        //height: notifHeight,
+        frame: false,
+        //show: false,
+        //dev
         width: notifWidth,
         height: notifHeight,
-        //frame: false,
-        //show: false,
         skipTaskbar: true,
         hasShadow: false,
-        alwaysOnTop : true,
+        //alwaysOnTop: true,
         transparent: true
     });
 
@@ -41,16 +45,13 @@ function createWindow() {
 
     appIcon = new Tray('./img/pony.png');
     var contextMenu = Menu.buildFromTemplate([
-        { label: 'Item1', type: 'radio' },
-        { label: 'Item2', type: 'radio' },
-        { label: 'Item3', type: 'radio', checked: true },
-        { label: 'Item4', type: 'radio' }
+        {label: 'Item1', type: 'radio'},
+        {label: 'Item2', type: 'radio'},
+        {label: 'Item3', type: 'radio', checked: true},
+        {label: 'Item4', type: 'radio'}
     ]);
     appIcon.setToolTip('Pony notif');
     appIcon.setContextMenu(contextMenu);
-
-    // Open the DevTools.
-    //mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
