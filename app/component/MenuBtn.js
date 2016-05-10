@@ -6,6 +6,16 @@ var MenuBtn = React.createClass({
     getInitialState: function () {
         return {isOpen: false}
     },
+    //
+    //propTypes: {
+    //    onClickItem: React.PropTypes.func
+    //},
+
+    getDefaultProps: function () {
+        return {
+            onClickItem: () => {console.log("nolistener on this btn")}
+        };
+    },
 
     render: function () {
         var wrapperClass = "menu-wrapper",
@@ -17,32 +27,27 @@ var MenuBtn = React.createClass({
 
         return (
             <div className="corner-menu">
-                <button onClick={this.onToggle}>{overlayIcon}</button>
+                <button onClick={this._onToggle}>{overlayIcon}</button>
 
                 <section className={wrapperClass}>
                     <ul>
-                        <li><a onClick={this.clickAdd}><span> <i className="fa fa-film"></i></span></a></li>
-                        <li><a onClick={this.clickEdit}><span> <i className="fa fa-play-circle"></i></span></a></li>
-                        <li><a onClick={this.clickRemove}><span> <i className="fa fa-map-marker"></i></span></a></li>
+                        <li><a onClick={this._onClick.bind(this,1)}><span> <i className="fa fa-comment-o"></i></span></a></li>
+                        <li><a onClick={this._onClick.bind(this,2)}><span> <i className="fa fa-server"></i></span></a></li>
+                        <li><a onClick={this._onClick.bind(this,3)}><span> <i className="fa fa-gitlab"></i></span></a></li>
                     </ul>
                 </section>
 
                 <div className={overlayClass}>
-                    <NotificationForm onToggle={this.onToggle}></NotificationForm>
+                    <NotificationForm onToggle={this._onToggle}></NotificationForm>
                 </div>
             </div>
         );
     },
-    clickAdd: function (event) {
-        event.stopPropagation();
+    _onClick: function (idx, e) {
+        this.props.onClickItem(idx);
+        this._onToggle(e);
     },
-    clickEdit: function (event) {
-        event.stopPropagation();
-    },
-    clickRemove: function (event) {
-        event.stopPropagation();
-    },
-    onToggle: function (event) {
+    _onToggle: function (event) {
         event.stopPropagation();
         this.setState({isOpen: !this.state.isOpen});
     }

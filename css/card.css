@@ -1,0 +1,42 @@
+.card{
+    width: 30vw;
+    height: 30vw;
+    background: #01468b url("../img/pony0.png") no-repeat fixed center;
+    float: left;
+    margin: 1% 1%;
+    padding: 1%;
+    background-size: cover;
+    color: white;
+    background-blend-mode: exclusion;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.card:hover, .card-btn-add:hover{
+    background-color: #20638f;
+    cursor: pointer;
+}
+
+.card-btn {
+    min-width: 50px;
+    min-height: 20px;
+}
+
+.card-btn-add {
+    background-color: #01468b;
+    padding: 5px;
+    margin: 11px 0 0 0;
+}
+
+.card input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    border-bottom: 3px solid #01468b;
+}

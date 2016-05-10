@@ -5,30 +5,40 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "watchify": "watchify --debug app/index.js -o build/bundle.js -v -d",
     "lint": "./node_modules/.bin/eslint .",
-    "build": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all"
+    "build": "electron-packager main.js --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all"
   },
   "author": "Nathan DAMIE",
   "license": "MIT",
   "devDependencies": {
-    "react": "^0.13.3",
+    "browserify": "^13.0.0",
     "electron-connect": "^0.3.7",
-    "electron-packager": "^6.0.0",
+    "electron-packager": "^7.0.0",
     "electron-prebuilt": "^0.37.6",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "firebase": "^2.4.2",
     "gulp": "^3.9.1",
-    "simplemde": "^1.10.1",
-    "browserify": "^13.0.0",
+    "react": "^0.13.3",
     "reactify": "^1.1.1",
+    "simplemde": "^1.10.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "d3": "^3.5.17",
+    "feedparser": "^1.1.4",
     "gulp-concat-css": "^2.2.0",
     "gulp-watch": "^4.3.5",
+    "node-jsx": "^0.13.3",
     "react-dom": "^15.0.1",
     "reactfire": "^0.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
   }
 }

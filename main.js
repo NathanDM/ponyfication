@@ -1,8 +1,10 @@
 'use strict';
 
 const electron = require('electron');
+const d3 = require('d3');
 // Module to control application life.
 const app = electron.app;
+
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
@@ -34,24 +36,26 @@ function createWindow() {
         //dev
         width: notifWidth,
         height: notifHeight,
-        skipTaskbar: true,
+        //skipTaskbar: true,
         hasShadow: false,
         //alwaysOnTop: true,
         transparent: true
     });
 
     // and load the index.html of the app.
-    mainWindow.loadURL('file://' + __dirname + '/app/index.html');
+    mainWindow.loadURL('http://10.70.2.205:3030');
+    //mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-    appIcon = new Tray('./img/pony.png');
-    var contextMenu = Menu.buildFromTemplate([
-        {label: 'Item1', type: 'radio'},
-        {label: 'Item2', type: 'radio'},
-        {label: 'Item3', type: 'radio', checked: true},
-        {label: 'Item4', type: 'radio'}
-    ]);
+    appIcon = new Tray('./img/pony0.png');
+    //var contextMenu = Menu.buildFromTemplate([
+    //    {label: 'Item1', type: 'radio'},
+    //    {label: 'Item2', type: 'radio'},
+    //    {label: 'Item3', type: 'radio', checked: true},
+    //    {label: 'Item4', type: 'radio'}
+    //]);
     appIcon.setToolTip('Pony notif');
-    appIcon.setContextMenu(contextMenu);
+    //appIcon.setContextMenu(contextMenu);
+    mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {

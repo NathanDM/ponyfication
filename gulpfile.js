@@ -16,8 +16,10 @@ var concatCss = require('gulp-concat-css');
 
 gulp.task('electron', () => {
     electron.start()
-    gulp.watch('main.js', electron.restart)
-    gulp.watch(['./build/style.css', './app/index.html', "./build/bundle.js"], () => {
+    gulp.watch('main.js', electron.restart);
+    gulp.watch('./css/**/*.css', ['css']);
+
+    gulp.watch(['./build/bundle.css', './app/index.html', "./build/bundle.js"], () => {
         electron.reload()
     })
 })
@@ -53,6 +55,7 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./build/'));
 });
 
+
 // Just running the two tasks
-gulp.task('default', ['browserify','css', 'electron']);
+gulp.task('default', ['electron']);
 
