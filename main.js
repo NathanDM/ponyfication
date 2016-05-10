@@ -1,7 +1,7 @@
 'use strict';
 
 const electron = require('electron');
-const d3 = require('d3');
+
 // Module to control application life.
 const app = electron.app;
 
@@ -43,8 +43,7 @@ function createWindow() {
     });
 
     // and load the index.html of the app.
-    mainWindow.loadURL('http://10.70.2.205:3030');
-    //mainWindow.loadURL('file://' + __dirname + '/index.html');
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
 
     appIcon = new Tray('./img/pony0.png');
     //var contextMenu = Menu.buildFromTemplate([
