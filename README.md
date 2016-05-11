@@ -26,7 +26,7 @@ npm install
 gulp build
 ```
 
-### Watcher
+### Launch the App with Watcher (js, css, html, electron)
 
 ```sh
 gulp
