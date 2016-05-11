@@ -1,4 +1,4 @@
-==Ponyfication
+## Ponyfication
 
 Simple electron application than allow you to manage your dev team.
 
@@ -12,21 +12,21 @@ Ponyfication's Component :
 - [ ] Merge List Item
 
 
-==Dev
+## Dev
 
-=== Install Dependencies
+### Install Dependencies
 
 ```sh
 npm install
 ```
 
-=== First Build
+### First Build
 
 ```sh
 gulp build
 ```
 
-=== Watcher
+### Watcher
 
 ```sh
 gulp
