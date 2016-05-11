@@ -72,7 +72,7 @@ let Dashboard = React.createClass({
                     let retval;
                     switch (team.component){
                         case "notification" :
-                            retval =  <JenkinsList url={team.url}/>;
+                            retval =  <JenkinsList url={team.url} key={"dashItem_" + i}/>;
                             break;
                         default :
                             retval = <div className="card" onClick={this.onClick.bind(this,team.children, team.name)}><span

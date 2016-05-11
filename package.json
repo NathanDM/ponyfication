@@ -27,13 +27,14 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "d3": "^3.5.17",
+    "envify": "^3.4.0",
     "feedparser": "^1.1.4",
     "gulp-concat-css": "^2.2.0",
     "gulp-watch": "^4.3.5",
     "node-jsx": "^0.13.3",
     "react-dom": "^15.0.1",
-    "reactfire": "^0.7.0"
+    "reactfire": "^0.7.0",
+    "request": "^2.72.0"
   },
   "browserify": {
     "transform": [

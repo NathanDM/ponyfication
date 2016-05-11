@@ -1,13 +1,34 @@
 ==Ponyfication
 
-Simple electron application than allow you to manage notification.
+Simple electron application than allow you to manage your dev team.
 
-==Install
+Ponyfication's Component :
 
- npm install
+- [X] Team Item
+- [X] Jenkins Api List Item
+- [X] Firebase listener
+- [ ] User List
+- [ ] Mood Component
+- [ ] Merge List Item
+
 
 ==Dev
- gulp
 
-==Packaging
- npm build
+=== Install Dependencies
+
+```sh
+npm install
+```
+
+=== First Build
+
+```sh
+gulp build
+```
+
+=== Watcher
+
+```sh
+gulp
+```
+

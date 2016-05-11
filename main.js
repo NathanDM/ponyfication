@@ -20,7 +20,7 @@ function createWindow() {
     let atomScreen = require('screen');
 
     const notifWidth = 470;
-    const notifHeight = 285;
+    const notifHeight = 310;
     const screenInfo = atomScreen.getAllDisplays();
     const workArea = screenInfo[0].workArea;
 
