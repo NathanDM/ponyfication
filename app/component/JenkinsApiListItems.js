@@ -1,3 +1,4 @@
+"use strict";
 let React = require('react');
 let request = require('request');
 
@@ -35,9 +36,33 @@ let ListItems = React.createClass({
         }
     },
 
+    getColor: function (item) {
+        switch (item) {
+            case "SUCCESS" :
+                return "green";
+            case "UNKNOWN":
+                return "blue";
+            case "UNSTABLE":
+                return "orange";
+            case "FAILING":
+                return "red";
+            case "DISABLED":
+                return "purple";
+            default :
+                return "purple";
+        }
+
+    },
+
     callWS: function (url) {
+        const options = {
+            url: url,
+            headers: {
+
+            }
+        };
         let that = this;
-        request(url, function (error, response, body) {
+        request(options, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 that.state.itemList.push(JSON.parse(body));
                 that.setState({itemList: that.state.itemList});
@@ -49,11 +74,9 @@ let ListItems = React.createClass({
         return (
             <div className="wrapper">
                 {this.state.itemList.map((item, i) => {
-                    var color = "green"
 
-                    if (item.result !== "SUCCESS") {
-                        color = "red";
-                    }
+                    let color = this.getColor(item.result);
+
                     return (
                         <div className={"notification " + color} key={"item_" + i}>
                             <div className="info">

@@ -1,3 +1,4 @@
+"use strict";
 let React = require('react');
 let ListItems = require('./ListItems');
 let RssListItems = require('./RssListItems');
@@ -10,7 +11,7 @@ let Dashboard = require('./Dashboard');
  *
  * @author $Author$
  */
-var App = React.createClass({
+let App = React.createClass({
     getInitialState: function () {
       return {collection : "teams"};
     },

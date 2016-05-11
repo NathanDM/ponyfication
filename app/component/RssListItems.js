@@ -1,3 +1,5 @@
+"use strict";
+
 let React = require('react');
 let Firebase = require('firebase');
 let RssFeedParser = require('../mixin/RssFeedParser.mixin');

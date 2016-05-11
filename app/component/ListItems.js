@@ -1,4 +1,6 @@
-var React = require('react');
+"use strict";
+
+let React = require('react');
 let Firebase = require('firebase');
 let ReactFireMixin = require('reactfire');
 
@@ -7,7 +9,7 @@ let ReactFireMixin = require('reactfire');
  *
  * @author $Author$
  */
-var ListItems = React.createClass({
+let ListItems = React.createClass({
     mixins: [ReactFireMixin],
     getInitialState: function () {
         return {items: []};

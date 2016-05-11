@@ -1,3 +1,4 @@
+"use strict";
 let React = require('react');
 let Firebase = require('firebase');
 let ReactFireMixin = require('reactfire');
@@ -57,7 +58,7 @@ let Dashboard = React.createClass({
         let additionalCard;
             if (this.props.collection === "teams") {
 
-                additionalCard =  <div className="card">
+                additionalCard =  <div className="card x2">
                     <input type="input"
                            onChange={this.onMessageChange}
                            required/>

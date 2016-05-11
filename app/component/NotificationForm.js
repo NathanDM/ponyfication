@@ -1,4 +1,6 @@
-var React = require('react');
+"use strict";
+
+let React = require('react');
 let Firebase = require('firebase');
 let ReactFireMixin = require('reactfire');
 /**
@@ -13,7 +15,7 @@ var NotificationForm = React.createClass({
     },
 
     componentWillMount: function () {
-        var firebaseRef = new Firebase("https://torrid-heat-623.firebaseio.com/items");
+        let firebaseRef = new Firebase("https://torrid-heat-623.firebaseio.com/items");
         this.bindAsArray(firebaseRef.limitToLast(3), 'items');
     },
 

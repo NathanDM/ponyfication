@@ -18,7 +18,7 @@ gulp.task('electron', () => {
     electron.start()
     gulp.watch('main.js', electron.restart);
     gulp.watch('./css/**/*.css', ['buildCSS']);
-    gulp.watch('./app/**/*.js', ['buildJS']);
+    gulp.watch('./app/**/*.js', ['browserify']);
     gulp.watch(['./app/index.html'], () => {
         electron.reload()
     })
@@ -40,7 +40,7 @@ gulp.task('browserify', function() {
             console.log('Updating!');
 
             watcher.bundle() // Create new bundle that uses the cache for high performance
-                .pipe(source('./build/bundle.js'))
+                .pipe(source('bundle.js'))
                 // This is where you add uglifying etc.
                 .pipe(gulp.dest('./build/'));
             console.log('Updated!', (Date.now() - updateStart) + 'ms');

@@ -1,4 +1,6 @@
-var React = require('react');
+"use strict";
+
+let React = require('react');
 let Firebase = require('firebase');
 let ReactFireMixin = require('reactfire');
 /**
@@ -6,14 +8,14 @@ let ReactFireMixin = require('reactfire');
  *
  * @author $Author$
  */
-var NotificationForm = React.createClass({
+let NotificationForm = React.createClass({
     mixins: [ReactFireMixin],
     getInitialState: function () {
         return {authorName : "",messageText :""};
     },
 
     componentWillMount: function () {
-        var firebaseRef = new Firebase("https://torrid-heat-623.firebaseio.com/items");
+        let firebaseRef = new Firebase("https://torrid-heat-623.firebaseio.com/items");
         this.bindAsArray(firebaseRef.limitToLast(3), 'items');
     },
 
@@ -47,7 +49,7 @@ var NotificationForm = React.createClass({
     },
 
     onKeyDown: function (event) {
-        var charCode = event.keyCode || event.charCode;
+        let charCode = event.keyCode || event.charCode;
         if (charCode === 13) {
             event.preventDefault();
             this.props.onToggle(event);

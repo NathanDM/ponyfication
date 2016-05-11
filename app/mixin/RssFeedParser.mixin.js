@@ -1,3 +1,5 @@
+"use strict";
+
 let FeedParser = require('feedparser');
 let request = require('request');
 

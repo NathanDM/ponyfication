@@ -1,15 +1,13 @@
-var React = require('react');
-var NotificationForm = require('./NotificationForm');
+"use strict";
+
+let React = require('react');
+let NotificationForm = require('./NotificationForm');
 
 
-var MenuBtn = React.createClass({
+let MenuBtn = React.createClass({
     getInitialState: function () {
         return {isOpen: false}
     },
-    //
-    //propTypes: {
-    //    onClickItem: React.PropTypes.func
-    //},
 
     getDefaultProps: function () {
         return {

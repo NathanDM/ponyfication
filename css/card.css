@@ -1,6 +1,6 @@
 .card{
-    width: 30vw;
-    height: 30vw;
+    width: 31.3333vw;
+    height: 31.3333vw;
     background: #01468b url("../img/pony0.png") no-repeat fixed center;
     float: left;
     margin: 1% 1%;
@@ -12,6 +12,11 @@
     font-size: 1.4em;
     text-align: center;
 }
+
+.card.x2 {
+    width: 64.6666vw;
+}
+
 
 .card:hover, .card-btn-add:hover{
     background-color: #20638f;
